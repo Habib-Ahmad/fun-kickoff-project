@@ -1,7 +1,6 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
@@ -10,21 +9,21 @@ import useStyles from './useStyles';
 interface Props {
   handleSubmit: (
     {
-      username,
       email,
+      name,
       password,
     }: {
       email: string;
+      name: string;
       password: string;
-      username: string;
     },
     {
       setStatus,
       setSubmitting,
     }: FormikHelpers<{
       email: string;
+      name: string;
       password: string;
-      username: string;
     }>,
   ) => void;
 }
@@ -36,11 +35,11 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
     <Formik
       initialValues={{
         email: '',
+        name: '',
         password: '',
-        username: '',
       }}
       validationSchema={Yup.object().shape({
-        username: Yup.string().required('Username is required').max(40, 'Username is too long'),
+        name: Yup.string().required('Name is required').max(40, 'Name is too long'),
         email: Yup.string().required('Email is required').email('Email is not valid'),
         password: Yup.string()
           .required('Password is required')
@@ -52,53 +51,62 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
-            id="username"
-            label={<Typography className={classes.label}>Username</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
-            name="username"
-            autoComplete="username"
-            autoFocus
-            helperText={touched.username ? errors.username : ''}
-            error={touched.username && Boolean(errors.username)}
-            value={values.username}
-            onChange={handleChange}
-          />
-          <TextField
             id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
+            placeholder="Your email"
+            label="Email address"
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            className={classes.textField}
             name="email"
             autoComplete="email"
+            autoFocus
             helperText={touched.email ? errors.email : ''}
             error={touched.email && Boolean(errors.email)}
             value={values.email}
             onChange={handleChange}
           />
           <TextField
-            id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
+            id="name"
+            placeholder="Your name"
+            label="Name"
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            className={classes.textField}
+            name="name"
+            autoComplete="name"
+            helperText={touched.name ? errors.name : ''}
+            error={touched.name && Boolean(errors.name)}
+            value={values.name}
+            onChange={handleChange}
+          />
+          <TextField
+            id="password"
+            placeholder="Create a password"
+            label="Password"
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+              classes: { root: classes.label },
+            }}
+            InputProps={{
+              classes: { input: classes.inputs },
+            }}
+            className={classes.textField}
             type="password"
             autoComplete="current-password"
             helperText={touched.password ? errors.password : ''}
@@ -107,9 +115,9 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             onChange={handleChange}
           />
 
-          <Box textAlign="center" marginTop={5}>
-            <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Create'}
+          <Box textAlign="center" marginTop={4}>
+            <Button type="submit" variant="contained" className={classes.submit}>
+              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Sign up'}
             </Button>
           </Box>
         </form>

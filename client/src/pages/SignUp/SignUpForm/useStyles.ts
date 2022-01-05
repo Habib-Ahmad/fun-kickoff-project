@@ -6,29 +6,51 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
+  textField: {
+    '&.MuiTextField-root': {
+      marginBottom: theme.spacing(4),
+    },
+    '&>.MuiOutlinedInput-root': {
+      border: '1px solid #00000026',
+
+      '&>.MuiOutlinedInput-notchedOutline': {
+        display: 'none',
+      },
+    },
+  },
   label: {
-    fontSize: 19,
-    color: 'rgb(0,0,0,0.4)',
-    paddingLeft: '5px',
+    marginTop: theme.spacing(-1.7),
+    marginLeft: theme.spacing(-2),
+
+    '&.MuiInputLabel-root': {
+      color: theme.palette.secondary.main,
+      fontSize: 14,
+      fontWeight: '700',
+      letterSpacing: '0.1rem',
+      textTransform: 'uppercase',
+      fontFamily: theme.typography.fontFamily,
+
+      '&.Mui-focused': {
+        color: theme.palette.secondary.main,
+      },
+    },
   },
   inputs: {
-    marginTop: '1rem',
-    height: '2rem',
-    padding: '5px',
-  },
-  forgot: {
-    paddingRight: 10,
-    color: '#3a8dff',
+    '&.MuiOutlinedInput-input': {
+      height: '1rem',
+    },
   },
   submit: {
-    margin: theme.spacing(3, 2, 2),
-    padding: 10,
+    '&.MuiButton-root': {
+      backgroundColor: theme.palette.primary.main,
+      boxShadow: 'none',
+
+      '&:hover': {
+        backgroundColor: theme.palette.primary.light,
+      },
+    },
     width: 160,
     height: 56,
-    borderRadius: theme.shape.borderRadius,
-    fontSize: 16,
-    backgroundColor: '#3a8dff',
-    fontWeight: 'bold',
   },
 }));
 
