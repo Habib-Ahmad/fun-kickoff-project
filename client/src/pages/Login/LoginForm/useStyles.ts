@@ -4,32 +4,56 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme: Theme) => ({
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+  },
+  textField: {
+    '&.MuiTextField-root': {
+      marginBottom: theme.spacing(4),
+    },
+    '&>.MuiOutlinedInput-root': {
+      border: '1px solid #00000026',
+
+      '&>.MuiOutlinedInput-notchedOutline': {
+        display: 'none',
+      },
+    },
   },
   label: {
-    fontSize: 19,
-    color: 'rgb(0,0,0,0.4)',
-    paddingLeft: '5px',
+    marginTop: theme.spacing(-1.7),
+    marginLeft: theme.spacing(-2),
+
+    '&.MuiInputLabel-root': {
+      color: theme.palette.secondary.main,
+      fontSize: 14,
+      fontWeight: '600',
+      textTransform: 'uppercase',
+
+      '&.Mui-focused': {
+        color: theme.palette.secondary.main,
+      },
+    },
   },
   inputs: {
-    marginTop: '.8rem',
-    height: '2rem',
-    padding: '5px',
+    '&.MuiOutlinedInput-input': {
+      height: '1rem',
+    },
   },
   forgot: {
     paddingRight: 10,
-    color: '#3a8dff',
+    color: theme.palette.primary.main,
+    cursor: 'pointer',
   },
   submit: {
-    margin: theme.spacing(3, 2, 2),
-    padding: 10,
+    '&.MuiButton-root': {
+      backgroundColor: theme.palette.primary.main,
+      boxShadow: 'none',
+
+      '&:hover': {
+        backgroundColor: theme.palette.primary.light,
+        boxShadow: 'none',
+      },
+    },
     width: 160,
     height: 56,
-    borderRadius: theme.shape.borderRadius,
-    marginTop: 49,
-    fontSize: 16,
-    backgroundColor: '#3a8dff',
-    fontWeight: 'bold',
   },
 }));
 

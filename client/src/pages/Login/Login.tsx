@@ -1,4 +1,3 @@
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -37,24 +36,16 @@ export default function Login(): JSX.Element {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          flexDirection="column"
-          className={classes.authWrapper}
-        >
-          <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
-          <Box width="100%" maxWidth={450} p={3} alignSelf="center">
-            <Grid container>
-              <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
-                  Welcome back!
-                </Typography>
-              </Grid>
-            </Grid>
+      <Grid item xs={12} sm={8} md={6} className={classes.item}>
+        <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
+          <Box width="100%" maxWidth={400} p={3}>
+            <Typography className={classes.welcome} component="h1">
+              Welcome back!
+            </Typography>
+
             <LoginForm handleSubmit={handleSubmit} />
+
+            <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
           </Box>
           <Box p={1} alignSelf="center" />
         </Box>

@@ -1,7 +1,7 @@
+import { Theme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
-import { theme } from '../../themes/theme';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     minHeight: '100vh',
     justifyContent: 'center',

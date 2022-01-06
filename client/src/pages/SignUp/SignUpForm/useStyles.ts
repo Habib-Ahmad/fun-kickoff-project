@@ -4,7 +4,6 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme: Theme) => ({
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
   },
   textField: {
     '&.MuiTextField-root': {
@@ -25,10 +24,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&.MuiInputLabel-root': {
       color: theme.palette.secondary.main,
       fontSize: 14,
-      fontWeight: '700',
-      letterSpacing: '0.1rem',
+      fontWeight: '600',
       textTransform: 'uppercase',
-      fontFamily: theme.typography.fontFamily,
 
       '&.Mui-focused': {
         color: theme.palette.secondary.main,
@@ -47,6 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
       '&:hover': {
         backgroundColor: theme.palette.primary.light,
+        boxShadow: 'none',
       },
     },
     width: 160,
