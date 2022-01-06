@@ -38,7 +38,7 @@ describe('SignUp tests', () => {
     expect(account).toBeInTheDocument();
     const login = getByText('Login');
     expect(login).toBeInTheDocument();
-    const title = getByRole('heading', { name: 'Sign Up' });
+    const title = getByRole('heading', { name: 'Sign up' });
     expect(title).toBeInTheDocument();
   });
 });

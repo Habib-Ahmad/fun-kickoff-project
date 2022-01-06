@@ -20,12 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     minHeight: '100%',
   },
   welcome: {
-    '&.MuiTypography-root': {
-      fontSize: '2rem',
-      fontWeight: 700,
-    },
-    paddingBottom: theme.spacing(3),
-    color: theme.palette.secondary.main,
+    paddingBottom: theme.spacing(5),
     textAlign: 'center',
   },
 }));

@@ -56,9 +56,6 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               shrink: true,
               classes: { root: classes.label },
             }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
             className={classes.textField}
             name="email"
             autoComplete="email"
@@ -79,7 +76,6 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               classes: { root: classes.label },
             }}
             InputProps={{
-              classes: { input: classes.inputs },
               endAdornment: <Typography className={classes.forgot}>Forgot?</Typography>,
             }}
             className={classes.textField}
@@ -91,11 +87,10 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             onChange={handleChange}
           />
           <Box textAlign="center" marginTop={5}>
-            <Button type="submit" variant="contained" className={classes.submit}>
+            <Button type="submit" variant="contained">
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>
-          <Box height={95} />
         </form>
       )}
     </Formik>

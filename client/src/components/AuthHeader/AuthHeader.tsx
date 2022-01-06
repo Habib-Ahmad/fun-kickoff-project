@@ -15,7 +15,7 @@ const AuthFooter = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
 
   return (
     <Box className={classes.authHeader}>
-      <Typography className={classes.accAside}>{asideText}</Typography>
+      <Typography variant="subtitle1">{asideText}</Typography>
       <Button component={Link} to={linkTo} className={classes.accBtn}>
         {btnText}
       </Button>

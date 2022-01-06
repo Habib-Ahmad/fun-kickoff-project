@@ -39,15 +39,16 @@ export default function Login(): JSX.Element {
       <Grid item xs={12} sm={8} md={6} className={classes.item}>
         <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
           <Box width="100%" maxWidth={400} p={3}>
-            <Typography className={classes.welcome} component="h1">
+            <Typography variant="h1" className={classes.welcome}>
               Welcome back!
             </Typography>
 
             <LoginForm handleSubmit={handleSubmit} />
 
-            <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
+            <Box mt={6}>
+              <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
+            </Box>
           </Box>
-          <Box p={1} alignSelf="center" />
         </Box>
       </Grid>
     </Grid>

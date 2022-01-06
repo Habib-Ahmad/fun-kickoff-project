@@ -60,9 +60,6 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
               shrink: true,
               classes: { root: classes.label },
             }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
             className={classes.textField}
             name="email"
             autoComplete="email"
@@ -82,9 +79,6 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
               shrink: true,
               classes: { root: classes.label },
             }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
             className={classes.textField}
             name="name"
             autoComplete="name"
@@ -103,9 +97,6 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
               shrink: true,
               classes: { root: classes.label },
             }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
             className={classes.textField}
             type="password"
             autoComplete="current-password"
@@ -116,7 +107,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
           />
 
           <Box textAlign="center" marginTop={4}>
-            <Button type="submit" variant="contained" className={classes.submit}>
+            <Button type="submit" variant="contained">
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Sign up'}
             </Button>
           </Box>

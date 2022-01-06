@@ -7,14 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   textField: {
     '&.MuiTextField-root': {
-      marginBottom: theme.spacing(4),
-    },
-    '&>.MuiOutlinedInput-root': {
-      border: '1px solid #00000026',
-
-      '&>.MuiOutlinedInput-notchedOutline': {
-        display: 'none',
-      },
+      marginBottom: theme.spacing(3),
     },
   },
   label: {
@@ -22,33 +15,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: theme.spacing(-2),
 
     '&.MuiInputLabel-root': {
-      color: theme.palette.secondary.main,
-      fontSize: 14,
-      fontWeight: '600',
-      textTransform: 'uppercase',
-
       '&.Mui-focused': {
         color: theme.palette.secondary.main,
       },
     },
-  },
-  inputs: {
-    '&.MuiOutlinedInput-input': {
-      height: '1rem',
-    },
-  },
-  submit: {
-    '&.MuiButton-root': {
-      backgroundColor: theme.palette.primary.main,
-      boxShadow: 'none',
-
-      '&:hover': {
-        backgroundColor: theme.palette.primary.light,
-        boxShadow: 'none',
-      },
-    },
-    width: 160,
-    height: 56,
   },
 }));
 
