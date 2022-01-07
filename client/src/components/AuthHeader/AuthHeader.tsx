@@ -14,16 +14,9 @@ const AuthFooter = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box
-      p={1}
-      display="flex"
-      justifyContent="flex-end"
-      alignSelf="flex-end"
-      marginRight={5}
-      className={classes.authHeader}
-    >
-      <Typography className={classes.accAside}>{asideText}</Typography>
-      <Button component={Link} to={linkTo} color="inherit" className={classes.accBtn} variant="contained">
+    <Box className={classes.authHeader}>
+      <Typography variant="subtitle1">{asideText}</Typography>
+      <Button component={Link} to={linkTo} className={classes.accBtn}>
         {btnText}
       </Button>
     </Box>
