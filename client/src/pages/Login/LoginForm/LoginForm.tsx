@@ -48,15 +48,15 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <TextField
             id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
+            placeholder="Your email"
+            label="E-mail address"
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
+            className={classes.textField}
             name="email"
             autoComplete="email"
             autoFocus
@@ -67,16 +67,18 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
           />
           <TextField
             id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
+            placeholder="Your password"
+            label="Password"
             fullWidth
             margin="normal"
             InputLabelProps={{
               shrink: true,
+              classes: { root: classes.label },
             }}
             InputProps={{
-              classes: { input: classes.inputs },
               endAdornment: <Typography className={classes.forgot}>Forgot?</Typography>,
             }}
+            className={classes.textField}
             type="password"
             autoComplete="current-password"
             helperText={touched.password ? errors.password : ''}
@@ -85,11 +87,10 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             onChange={handleChange}
           />
           <Box textAlign="center" marginTop={5}>
-            <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
+            <Button type="submit" variant="contained">
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>
-          <Box height={95} />
         </form>
       )}
     </Formik>

@@ -1,4 +1,3 @@
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -16,10 +15,10 @@ export default function Register(): JSX.Element {
   const { updateSnackBarMessage } = useSnackBar();
 
   const handleSubmit = (
-    { username, email, password }: { email: string; password: string; username: string },
-    { setSubmitting }: FormikHelpers<{ email: string; password: string; username: string }>,
+    { name, email, password }: { email: string; password: string; name: string },
+    { setSubmitting }: FormikHelpers<{ email: string; password: string; name: string }>,
   ) => {
-    register(username, email, password).then((data) => {
+    register(name, email, password).then((data) => {
       if (data.error) {
         console.error({ error: data.error.message });
         setSubmitting(false);
@@ -38,26 +37,19 @@ export default function Register(): JSX.Element {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          flexDirection="column"
-          className={classes.authWrapper}
-        >
-          <AuthHeader linkTo="/login" asideText="Already have an account?" btnText="Login" />
-          <Box width="100%" maxWidth={450} p={3} alignSelf="center">
-            <Grid container>
-              <Grid item xs>
-                <Typography className={classes.welcome} component="h1" variant="h5">
-                  Create an account
-                </Typography>
-              </Grid>
-            </Grid>
+      <Grid item xs={12} sm={8} md={6} className={classes.item}>
+        <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
+          <Box width="100%" maxWidth={400} p={3}>
+            <Typography variant="h1" className={classes.welcome}>
+              Sign up
+            </Typography>
+
             <SignUpForm handleSubmit={handleSubmit} />
+
+            <Box mt={6}>
+              <AuthHeader linkTo="/login" asideText="Already a member?" btnText="Login" />
+            </Box>
           </Box>
-          <Box p={1} alignSelf="center" />
         </Box>
       </Grid>
     </Grid>
