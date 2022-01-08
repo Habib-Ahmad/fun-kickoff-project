@@ -13,10 +13,12 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon, AccountCircle } from '@mui/icons-material';
 import { Person as ProfileIcon, Logout as LogoutIcon, Settings as SettingsIcon } from '@mui/icons-material';
+import { useHistory } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { loggedInUser, logout } = useAuth();
+  const history = useHistory();
 
   const open = Boolean(anchorEl);
 
@@ -75,7 +77,7 @@ const Navbar: React.FC = () => {
                 </ListItemIcon>
                 <ListItemText>Settings</ListItemText>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={() => history.push('/profile-settings')}>
                 <ListItemIcon>
                   <ProfileIcon fontSize="small" />
                 </ListItemIcon>
