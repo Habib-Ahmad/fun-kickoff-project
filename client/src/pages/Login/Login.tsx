@@ -8,7 +8,6 @@ import LoginForm from './LoginForm/LoginForm';
 import AuthHeader from '../../components/AuthHeader/AuthHeader';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
-import { Navbar } from '../../components/Navbar/Navbar';
 
 export default function Login(): JSX.Element {
   const classes = useStyles();
@@ -37,7 +36,6 @@ export default function Login(): JSX.Element {
 
   return (
     <>
-      <Navbar />
       <Grid container component="main" className={classes.root}>
         <Grid item xs={12} sm={8} md={6} className={classes.item}>
           <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
