@@ -35,24 +35,22 @@ export default function Login(): JSX.Element {
   };
 
   return (
-    <>
-      <Grid container component="main" className={classes.root}>
-        <Grid item xs={12} sm={8} md={6} className={classes.item}>
-          <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
-            <Box width="100%" maxWidth={400} p={3}>
-              <Typography variant="h1" className={classes.welcome}>
-                Welcome back!
-              </Typography>
+    <Grid container component="main" className={classes.root}>
+      <Grid item xs={12} sm={8} md={6} className={classes.item}>
+        <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
+          <Box width="100%" maxWidth={400} p={3}>
+            <Typography variant="h1" className={classes.welcome}>
+              Welcome back!
+            </Typography>
 
-              <LoginForm handleSubmit={handleSubmit} />
+            <LoginForm handleSubmit={handleSubmit} />
 
-              <Box mt={6}>
-                <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
-              </Box>
+            <Box mt={6}>
+              <AuthHeader linkTo="/signup" asideText="Don't have an account?" btnText="Create account" />
             </Box>
           </Box>
-        </Grid>
+        </Box>
       </Grid>
-    </>
+    </Grid>
   );
 }

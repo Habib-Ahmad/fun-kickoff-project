@@ -36,24 +36,22 @@ export default function Register(): JSX.Element {
   };
 
   return (
-    <>
-      <Grid container component="main" className={classes.root}>
-        <Grid item xs={12} sm={8} md={6} className={classes.item}>
-          <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
-            <Box width="100%" maxWidth={400} p={3}>
-              <Typography variant="h1" className={classes.welcome}>
-                Sign up
-              </Typography>
+    <Grid container component="main" className={classes.root}>
+      <Grid item xs={12} sm={8} md={6} className={classes.item}>
+        <Box minHeight={{ xs: '100vh', sm: '100%' }} className={classes.authWrapper}>
+          <Box width="100%" maxWidth={400} p={3}>
+            <Typography variant="h1" className={classes.welcome}>
+              Sign up
+            </Typography>
 
-              <SignUpForm handleSubmit={handleSubmit} />
+            <SignUpForm handleSubmit={handleSubmit} />
 
-              <Box mt={6}>
-                <AuthHeader linkTo="/login" asideText="Already a member?" btnText="Login" />
-              </Box>
+            <Box mt={6}>
+              <AuthHeader linkTo="/login" asideText="Already a member?" btnText="Login" />
             </Box>
           </Box>
-        </Grid>
+        </Box>
       </Grid>
-    </>
+    </Grid>
   );
 }
