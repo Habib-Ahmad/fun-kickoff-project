@@ -11,6 +11,13 @@ export const theme = createTheme({
       textAlign: 'center',
     },
 
+    h2: {
+      fontSize: '1.2rem',
+      fontWeight: 600,
+      color: '#000',
+      textAlign: 'center',
+    },
+
     subtitle1: {
       fontWeight: 600,
       fontSize: '0.875rem',
@@ -51,6 +58,10 @@ export const theme = createTheme({
         },
         notchedOutline: {
           display: 'none',
+        },
+        multiline: {
+          height: 140,
+          alignItems: 'flex-start',
         },
       },
     },
