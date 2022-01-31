@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: 40,
     fontSize: 12,
     fontWeight: 'bold',
+    textTransform: 'capitalize',
 
     '&:hover': {
       color: theme.palette.secondary.light,

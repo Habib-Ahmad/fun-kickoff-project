@@ -17,13 +17,12 @@ import useStyles from './useStyles';
 import { Person as ProfileIcon, Logout as LogoutIcon, Settings as SettingsIcon } from '@mui/icons-material';
 import Logo from '../../Images/logo.png';
 import ProfilePhoto from '../../Images/68f55f7799df6c8078a874cfe0a61a5e6e9e1687.png';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { loggedInUser, logout } = useAuth();
   const classes = useStyles();
-  const history = useHistory();
 
   const open = Boolean(anchorEl);
 
@@ -98,16 +97,16 @@ const Navbar: React.FC = () => {
           <>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <Link to={'/signup'} className={classes.linkButton}>
-                BECOME A SITTER
+                Become a sitter
               </Link>
 
-              <Button variant="outlined" size="medium" onClick={() => history.push('/login')}>
+              <Button component={Link} variant="outlined" size="medium" to="/login">
                 Login
               </Button>
 
               <Box width={10} />
 
-              <Button variant="contained" size="medium" onClick={() => history.push('/signup')}>
+              <Button component={Link} variant="contained" size="medium" to="/signup">
                 Sign up
               </Button>
             </Box>
