@@ -107,7 +107,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
           />
 
           <Box textAlign="center" marginTop={4}>
-            <Button type="submit" variant="contained">
+            <Button type="submit" variant="contained" size="large">
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Sign up'}
             </Button>
           </Box>

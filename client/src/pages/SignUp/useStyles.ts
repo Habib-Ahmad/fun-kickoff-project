@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    minHeight: '100vh',
+    minHeight: 'calc(100vh - 64px)',
     justifyContent: 'center',
     alignItems: 'center',
   },

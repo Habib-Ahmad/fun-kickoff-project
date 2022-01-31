@@ -4,21 +4,25 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
   Menu,
   MenuItem,
   ListItemIcon,
   ListItemText,
   Divider,
+  Box,
+  Button,
+  Avatar,
 } from '@mui/material';
-import { Menu as MenuIcon, AccountCircle } from '@mui/icons-material';
+import useStyles from './useStyles';
 import { Person as ProfileIcon, Logout as LogoutIcon, Settings as SettingsIcon } from '@mui/icons-material';
-import { useHistory } from 'react-router-dom';
+import Logo from '../../Images/logo.png';
+import ProfilePhoto from '../../Images/68f55f7799df6c8078a874cfe0a61a5e6e9e1687.png';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { loggedInUser, logout } = useAuth();
-  const history = useHistory();
+  const classes = useStyles();
 
   const open = Boolean(anchorEl);
 
@@ -36,25 +40,22 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" color="primary">
       <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My App
-        </Typography>
-        {loggedInUser && (
+        <Box sx={{ flex: '1', cursor: 'pointer' }}>
+          <img src={Logo} alt="Pet Sitter" />
+        </Box>
+
+        {loggedInUser ? (
           <>
             <IconButton
-              size="large"
+              size="small"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleMenuOpen}
-              color="inherit"
             >
-              <AccountCircle />
+              <Avatar src={ProfilePhoto} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -91,6 +92,24 @@ const Navbar: React.FC = () => {
                 <ListItemText>Logout</ListItemText>
               </MenuItem>
             </Menu>
+          </>
+        ) : (
+          <>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Link to={'/signup'} className={classes.linkButton}>
+                Become a sitter
+              </Link>
+
+              <Button component={Link} variant="outlined" size="medium" to="/login">
+                Login
+              </Button>
+
+              <Box width={10} />
+
+              <Button component={Link} variant="contained" size="medium" to="/signup">
+                Sign up
+              </Button>
+            </Box>
           </>
         )}
       </Toolbar>

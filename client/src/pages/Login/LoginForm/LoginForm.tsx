@@ -87,7 +87,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             onChange={handleChange}
           />
           <Box textAlign="center" marginTop={5}>
-            <Button type="submit" variant="contained">
+            <Button type="submit" variant="contained" size="large">
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>

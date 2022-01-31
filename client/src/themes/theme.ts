@@ -29,9 +29,22 @@ export const theme = createTheme({
   spacing: 6,
 
   components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+          paddingLeft: 20,
+          paddingRight: 20,
+        },
+        colorPrimary: {
+          backgroundColor: '#fff',
+        },
+      },
+    },
+
     MuiButton: {
       styleOverrides: {
-        contained: {
+        containedSizeLarge: {
           backgroundColor: '#f14140',
           boxShadow: 'none',
           width: 160,
@@ -39,6 +52,16 @@ export const theme = createTheme({
           fontSize: '.8rem',
           textTransform: 'uppercase',
           fontWeight: 500,
+        },
+        sizeMedium: {
+          boxShadow: 'none',
+          width: 120,
+          height: 40,
+          fontSize: '.7rem',
+          fontWeight: 600,
+          '&:hover': {
+            boxShadow: 'none',
+          },
         },
       },
     },
