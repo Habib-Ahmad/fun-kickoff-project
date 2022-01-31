@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                 </ListItemIcon>
                 <ListItemText>Settings</ListItemText>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={() => history.push('/profile-settings/edit-profile')}>
                 <ListItemIcon>
                   <ProfileIcon fontSize="small" />
                 </ListItemIcon>
